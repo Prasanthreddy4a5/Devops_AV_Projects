@@ -20,6 +20,9 @@ resource "aws_instance" "app_server" {
   tags = {
     Name = "Terraform_Demo"
   }
+}
+
+
   provider "aws" {
   region  = "us-east-1"
 }
