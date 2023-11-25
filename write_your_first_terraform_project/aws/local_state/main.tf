@@ -23,13 +23,12 @@ resource "aws_instance" "app_server" {
 }
 
 
-  provider "aws" {
-  region  = "us-east-1"
-}
+  
 
 resource "aws_instance" "devops-practice" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t2.micro"
+  region  = "us-east-1"
 
   tags = {
     Name = "devops-practice"
