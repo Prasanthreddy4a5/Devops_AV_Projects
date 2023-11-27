@@ -23,6 +23,9 @@ resource "aws_instance" "app_server" {
 }
 
 
+provider "aws" {
+  region  = "us-east-1"
+}
   
 resource "aws_instance" "devops_practice" {
   ami           = "ami-03265a0778a880afb"
