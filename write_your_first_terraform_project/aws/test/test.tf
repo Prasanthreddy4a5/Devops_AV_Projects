@@ -1,5 +1,4 @@
-output "test"
-{
+output "test" {
 
-    value = Hello World
+    value = "Hello World"
 }
