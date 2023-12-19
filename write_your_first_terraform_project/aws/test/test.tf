@@ -10,8 +10,7 @@ output "Hello" {
     
 }
 
-variable "fruit"
-{
+variable "fruit"{
 default = "Apple"
 
 }
