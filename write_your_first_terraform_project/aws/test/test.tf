@@ -15,7 +15,7 @@ default = "Apple"
 
 }
 
-output {
+output "fruit"{
 
 value = var.fruit
 
