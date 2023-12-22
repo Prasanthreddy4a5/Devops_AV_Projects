@@ -26,7 +26,7 @@ variable "components" {
   default = ["catalogue", "frontend", "mongodb"]
 }
 
-count = length(var.components)
+  count = length(var.components)
 
 output "components"{
 value = var.components[count.index]
