@@ -26,13 +26,14 @@ variable "components" {
   default = ["catalogue", "frontend", "mongodb"]
 }
 
-  count = length(var.components)
+  #count = length(var.components)
 
 output "components"{
 value = var.components[count.index]
+}
 
   #Name = var.components[count.index]
   #Name = element(var.components, count.index)
-  }
+  
 
 
