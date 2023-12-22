@@ -1,20 +1,17 @@
 variable "components" {
-  default = ["catalogue", "frontend", "mongodb"]
-}
-
-resource "aws_instance" "instance" {
-
-  count = length(var.components)
-
-  ami           = "ami-03265a0778a880afb"
-  instance_type = "t2.micro"
-  //vpc_security_group_ids = [ "sg-0dee954b08055e577" ]
-
-  tags = {
-    //Name = var.components[count.index]
-    Name = element(var.components, count.index)
+  default = {
+    frontend  = { name = "frontend_sg" }
+    catalogue = { name = "catalogue_sg" }
+    mongodb   = { name = "mongodb_sg" }
   }
 }
+
+
+resource "aws_security_group" "allow_tls" {
+  for_each = var.components
+  name     = lookup(var.components, each.value["name"], null)
+}
+
 
 
 
